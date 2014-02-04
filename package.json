@@ -1,0 +1,28 @@
+{
+  "name": "hatchet",
+  "version": "0.0.0",
+  "description": "Send user activities into logstash",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbuck/hatchet.git"
+  },
+  "keywords": [
+    "logstash"
+  ],
+  "author": "Jon Buckley <jon@jbuckley.ca>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jbuck/hatchet/issues"
+  },
+  "homepage": "https://github.com/jbuck/hatchet",
+  "dependencies": {
+    "redis": "~0.10.0"
+  },
+  "optionalDependencies": {
+    "hiredis": "~0.1.16"
+  }
+}
