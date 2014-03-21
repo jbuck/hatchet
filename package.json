@@ -1,6 +1,6 @@
 {
   "name": "hatchet",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Send user activities into logstash",
   "main": "index.js",
   "scripts": {
