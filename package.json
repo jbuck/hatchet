@@ -4,7 +4,7 @@
   "description": "Send user activities into logstash",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --timeout 10000"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,10 @@
   },
   "homepage": "https://github.com/jbuck/hatchet",
   "dependencies": {
-    "redis": "~0.10.0"
+    "aws-sdk": "^2.0.0-rc12"
   },
-  "optionalDependencies": {
-    "hiredis": "~0.1.16"
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2"
   }
 }
