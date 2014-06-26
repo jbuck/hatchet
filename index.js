@@ -1,15 +1,12 @@
 var AWS = require("aws-sdk");
 var sqs = new AWS.SQS({
+  maxRetries: 15,
   region: process.env.HATCHET_QUEUE_REGION
 });
 
 module.exports = {
-  send: function(event_type, data) {
+  send: function(event_type, data, callback) {
     if (typeof data !== "object") {
-      return;
-    }
-
-    if (!process.env.HATCHET_QUEUE_URL) {
       return;
     }
 
@@ -20,13 +17,20 @@ module.exports = {
       data: data
     };
 
+    if (!process.env.HATCHET_QUEUE_URL) {
+      console.log("--- Hatchet message ---");
+      console.log(wrapper);
+      console.log("-----------------------");
+      return;
+    }
+
     var body = JSON.stringify(wrapper);
 
     sqs.sendMessage({
       MessageBody: body,
       QueueUrl: process.env.HATCHET_QUEUE_URL
     }, function(err, data) {
-
+      callback(err, data);
     });
   }
 };
