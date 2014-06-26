@@ -1,6 +1,6 @@
 # hatchet
 
-Send user activities into logstash
+Send data into an SQS queue
 
 ## Usage
 
@@ -10,6 +10,8 @@ hatchet.send("create_event", {
   dimensions: {
     user_id: 1234
   }
+}, function(err, data) {
+  console.log("we sent a message!");
 });
 ```
 

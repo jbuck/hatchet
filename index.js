@@ -30,7 +30,9 @@ module.exports = {
       MessageBody: body,
       QueueUrl: process.env.HATCHET_QUEUE_URL
     }, function(err, data) {
-      callback(err, data);
+      if (callback) {
+        callback(err, data);
+      }
     });
   }
 };
