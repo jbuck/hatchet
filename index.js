@@ -21,6 +21,10 @@ module.exports = {
       console.log("--- Hatchet message ---");
       console.log(wrapper);
       console.log("-----------------------");
+
+      if (callback) {
+        callback();
+      }
       return;
     }
 
