@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/jbuck/hatchet",
   "dependencies": {
-    "aws-sdk": "^2.0.4"
+    "aws-sdk": "^2.1.14"
   },
   "devDependencies": {
     "chai": "^1.9.1",
