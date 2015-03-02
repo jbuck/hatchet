@@ -23,7 +23,11 @@ module.exports = {
       console.log("-----------------------");
 
       if (callback) {
-        callback();
+        callback(null, {
+          MD5OfMessageBody: "fake",
+          MD5OfMessageAttributes: "fake",
+          MessageId: "fake"
+        });
       }
       return;
     }
