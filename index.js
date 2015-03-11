@@ -18,9 +18,11 @@ module.exports = {
     };
 
     if (!process.env.HATCHET_QUEUE_URL) {
-      console.log("--- Hatchet message ---");
-      console.log(wrapper);
-      console.log("-----------------------");
+      if (!process.env.HATCHET_NO_LOG) {
+        console.log("--- Hatchet message ---");
+        console.log(wrapper);
+        console.log("-----------------------");
+      }
 
       if (callback) {
         callback(null, {
